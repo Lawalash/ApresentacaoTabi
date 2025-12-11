@@ -36,9 +36,6 @@ export const SlidePrinciples: React.FC<SlideProps> = (props) => {
                 </h2>
               </div>
               <div className="h-1 w-24 bg-gradient-to-r from-nu-primary to-nu-sky rounded-full" />
-              <p className="text-base text-gray-600 leading-relaxed">
-                O que nos guia em cada decisão: foco no simples, inovação constante e excelência na entrega.
-              </p>
             </div>
           </div>
 
