@@ -11,17 +11,16 @@ const App: React.FC = () => {
 
   const handleNext = () => {
     if (currentSlide < totalSlides - 1) {
-      setCurrentSlide(prev => prev + 1);
+      setCurrentSlide((prev) => prev + 1);
     }
   };
 
   const handlePrev = () => {
     if (currentSlide > 0) {
-      setCurrentSlide(prev => prev - 1);
+      setCurrentSlide((prev) => prev - 1);
     }
   };
 
-  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
@@ -37,19 +36,17 @@ const App: React.FC = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden font-poppins text-gray-800">
-      {/* Slide Rendering */}
       <div className="w-full h-full transition-opacity duration-500 ease-in-out">
         {currentSlide === SlideIndex.COVER && <Slide1Cover />}
         {currentSlide === SlideIndex.PRINCIPLES && <Slide2Principles />}
         {currentSlide === SlideIndex.IMPROVEMENTS && <Slide3Improvements />}
       </div>
 
-      {/* Persistent Navigation */}
-      <Navigation 
-        onNext={handleNext} 
-        onPrev={handlePrev} 
-        canNext={currentSlide < totalSlides - 1} 
-        canPrev={currentSlide > 0} 
+      <Navigation
+        onNext={handleNext}
+        onPrev={handlePrev}
+        canNext={currentSlide < totalSlides - 1}
+        canPrev={currentSlide > 0}
         isCover={currentSlide === SlideIndex.COVER}
       />
     </div>
