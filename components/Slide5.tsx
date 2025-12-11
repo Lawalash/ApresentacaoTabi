@@ -19,6 +19,7 @@ export const Slide5: React.FC<SlideProps> = (props) => {
         {/* Thank You Message */}
         <motion.h1
           className="font-rubik text-7xl md:text-8xl font-bold text-center mb-16 bg-gradient-to-r from-nu-primary to-nu-secondary bg-clip-text text-transparent"
+          style={{ lineHeight: "inherit" }}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
