@@ -18,13 +18,15 @@ export const Slide1: React.FC<SlideProps> = (props) => {
         
         {/* Left Content */}
         <div className="w-1/2 flex flex-col justify-center text-white space-y-2">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="font-rubik text-6xl font-bold leading-tight"
           >
-            Governança <br /> Locker
+            TABI
+            <br />
+            Controle de Horas Extras
           </motion.h1>
 
           <motion.p
@@ -33,7 +35,7 @@ export const Slide1: React.FC<SlideProps> = (props) => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="font-poppins text-2xl font-light text-nu-sky pt-2"
           >
-            Conversa rápida sobre jornada, pausas e hora extra
+            Jornada, pausas e hora extra sob governança do início ao fim
           </motion.p>
 
           <motion.div 
@@ -49,7 +51,7 @@ export const Slide1: React.FC<SlideProps> = (props) => {
             transition={{ delay: 0.8 }}
             className="font-poppins text-lg opacity-90 font-medium tracking-wide"
           >
-            Treinamentos rápidos: LOCKER (atendentes) + TABI (liderança)
+            Visão integrada para TÁTICO, NOC e Supervisão – com trilha completa de auditoria.
           </motion.p>
         </div>
 
@@ -66,9 +68,9 @@ export const Slide1: React.FC<SlideProps> = (props) => {
              <div className="absolute bottom-0 left-0 w-40 h-40 bg-nu-primary/40 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
              
              <div className="text-white text-center z-10">
-                <h3 className="font-rubik text-3xl mb-2 font-semibold">Operação Nubank</h3>
+                <h3 className="font-rubik text-3xl mb-2 font-semibold">Visão única da operação</h3>
                 <p className="font-poppins text-sm opacity-90 leading-relaxed">
-                  Alinhamento de liderança e supervisão<br/>para Locker e TABI.
+                  Planejamento, validação e atribuição de HE em um único painel.
                 </p>
              </div>
           </motion.div>

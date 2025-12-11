@@ -5,9 +5,9 @@ import { SlideLayout } from './SlideLayout';
 
 export const Slide5: React.FC<SlideProps> = (props) => {
   return (
-    <SlideLayout 
-      {...props} 
-      title="Governança Locker"
+    <SlideLayout
+      {...props}
+      title="TABI · Próximos passos"
       // Using sidebar for consistency, though optional per prompt
     >
       <div className="h-full flex flex-col justify-center items-center relative">
@@ -20,15 +20,25 @@ export const Slide5: React.FC<SlideProps> = (props) => {
           transition={{ duration: 0.7 }}
         >
           <h1 className="font-rubik text-7xl font-bold bg-gradient-to-r from-nu-primary to-nu-secondary bg-clip-text text-transparent mb-6">
-            Obrigado
+            Vamos ver o TABI na prática
           </h1>
           <p className="font-poppins text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Governança Locker é pilar de excelência e segurança; treinamentos LOCKER + TABI são o passo mínimo para jornada correta.
+            O TABI centraliza planejamento, validação e atribuição de HE, garantindo transparência e aderência às regras da operação.
           </p>
         </motion.div>
 
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          onClick={() => window.open("http://127.0.0.1:5500/html/merged.html", "_blank")}
+          className="px-6 py-3 rounded-full bg-nu-primary text-white font-poppins font-semibold shadow-lg hover:shadow-xl transition-shadow"
+        >
+          Abrir mockup do TABI
+        </motion.button>
+
         {/* Contact Block */}
-        <motion.div 
+        <motion.div
           className="bg-gray-50 rounded-xl p-8 border border-gray-200 shadow-sm text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,10 +46,10 @@ export const Slide5: React.FC<SlideProps> = (props) => {
         >
           <h3 className="font-rubik text-xl text-nu-primary mb-2">Dúvidas?</h3>
           <p className="font-poppins text-gray-500 mb-4">Estamos à disposição</p>
-          
+
           <div className="bg-white px-6 py-3 rounded-full border border-nu-sky/30 shadow-sm">
              <span className="font-poppins font-medium text-nu-secondary">
-               &lt; AeC - Contact Center - Eficiencia Fora da PA &gt;
+               AeC · Transformação Digital & IA
              </span>
           </div>
         </motion.div>
@@ -50,7 +60,7 @@ export const Slide5: React.FC<SlideProps> = (props) => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          Vamos garantir 100% de aderência aos treinamentos.
+          Vamos garantir governança de 100% das horas extras registradas no TABI.
         </motion.p>
 
         {/* Final Copyright */}
