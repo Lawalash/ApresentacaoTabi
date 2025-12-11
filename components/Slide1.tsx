@@ -84,24 +84,7 @@ export const Slide1: React.FC<SlideProps> = (props) => {
             </p>
           </motion.div>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="pt-4"
-          >
-            <button className="group relative px-8 py-3 font-poppins font-semibold text-[#225B8E] bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl">
-              <span className="relative z-10">Explorar Solução</span>
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-[#45C5DE] to-[#3BC2C7]"
-                initial={{ x: "100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-                style={{ zIndex: 0 }}
-              />
-            </button>
-          </motion.div>
+
         </motion.div>
 
         {/* Right Content - Enhanced Card */}
@@ -163,26 +146,6 @@ export const Slide1: React.FC<SlideProps> = (props) => {
                 <p className="font-poppins text-sm text-white/80 leading-relaxed max-w-xs">
                   Planejamento, validação e atribuição de HE em um único painel integrado.
                 </p>
-
-                {/* Stats/Features */}
-                <div className="grid grid-cols-3 gap-3 pt-4">
-                  {[
-                    { label: "Painéis", value: "3" },
-                    { label: "Funções", value: "5" },
-                    { label: "Dados", value: "Real-time" }
-                  ].map((stat, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.7 + i * 0.1 }}
-                      className="bg-white/10 backdrop-blur-sm rounded-lg p-2"
-                    >
-                      <p className="text-xs text-[#45C5DE] font-semibold">{stat.value}</p>
-                      <p className="text-xs text-white/60">{stat.label}</p>
-                    </motion.div>
-                  ))}
-                </div>
               </motion.div>
             </div>
           </motion.div>
