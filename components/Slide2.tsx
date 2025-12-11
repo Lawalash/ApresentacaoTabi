@@ -10,180 +10,142 @@ export const Slide2: React.FC<SlideProps> = (props) => {
       title="TABI · Contexto & Objetivos"
       subtitle="Por que precisamos de um sistema de governança de hora extra"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-4">
-        {/* Left Column: KPIs + Resumo Visual */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-8 h-full">
+        
+        {/* Left Column: Problema Atual */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col justify-center"
         >
-          <div className="bg-white rounded-2xl p-6 border-l-4 border-nu-secondary shadow-sm h-full flex flex-col gap-6">
-            <div>
-              <h3 className="text-xl font-rubik font-bold text-nu-primary mb-2">
-                Cenário atual da HE
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 border-l-4 border-gray-400 shadow-lg h-full flex flex-col justify-between">
+            
+            {/* Header */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-rubik font-bold text-gray-700 mb-2">
+                Cenário Atual
               </h3>
-              <p className="text-xs font-poppins text-gray-600">
-                Planilhas manuais, pouca visibilidade por segmento/operadora e dificuldade de cruzar TÁTICO, NOC e Supervisão,
-                com risco trabalhista por falta de trilha de auditoria.
-              </p>
+              <div className="w-16 h-1 bg-gray-300 rounded-full" />
             </div>
 
-            {/* Chips de segmentos */}
-            <div className="flex flex-wrap gap-2">
-              {['TÁTICO', 'NOC', 'SUPERVISÃO', 'AUDITORIA'].map((seg) => (
-                <span
-                  key={seg}
-                  className="px-3 py-1 rounded-full text-[11px] font-medium font-poppins bg-nu-surface text-nu-primary border border-nu-primary/10"
+            {/* Icon/Visual */}
+            <div className="flex justify-center my-4">
+              <div className="w-20 h-20 rounded-full bg-gray-300/40 flex items-center justify-center">
+                <svg className="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Problem Points */}
+            <div className="space-y-4 flex-1">
+              {[
+                { icon: '📋', text: 'Planilhas manuais dispersas' },
+                { icon: '❌', text: 'Pouca visibilidade entre segmentos' },
+                { icon: '⚠️', text: 'Risco trabalhista por falta de auditoria' }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
+                  className="flex items-start gap-3"
                 >
-                  {seg}
-                </span>
+                  <span className="text-lg shrink-0">{item.icon}</span>
+                  <p className="text-base font-poppins text-gray-700 leading-relaxed">
+                    {item.text}
+                  </p>
+                </motion.div>
               ))}
             </div>
 
-            {/* KPIs principais */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {/* KPI Locker Ativos */}
-              <div className="bg-gradient-to-br from-nu-primary/10 to-nu-secondary/5 rounded-xl p-3 flex flex-col">
-                <span className="text-[11px] font-poppins text-gray-500">
-                  Redução de retrabalho
-                </span>
-                <span className="text-2xl font-rubik font-bold text-nu-primary mt-1">
-                  80%
-                </span>
-                <span className="text-[11px] font-poppins text-gray-600 mt-1">
-                  Menos erros manuais na distribuição de HE
-                </span>
-              </div>
-
-              {/* KPI TABI Liderança */}
-              <div className="bg-gradient-to-br from-nu-secondary/10 to-nu-primary/5 rounded-xl p-3 flex flex-col">
-                <span className="text-[11px] font-poppins text-gray-500">
-                  Aderência às regras de HE
-                </span>
-                <span className="text-2xl font-rubik font-bold text-nu-secondary mt-1">
-                  100%
-                </span>
-                <span className="text-[11px] font-poppins text-gray-600 mt-1">
-                  Meta: registrar regras e aprovações com rastreabilidade
-                </span>
-              </div>
-
-              {/* KPI Pendências no Click */}
-              <div className="bg-gradient-to-br from-gray-50 to-nu-surface rounded-xl p-3 flex flex-col">
-                <span className="text-[11px] font-poppins text-gray-500">
-                  Agilidade de decisão
-                </span>
-                <span className="text-2xl font-rubik font-bold text-amber-500 mt-1">
-                  2x
-                </span>
-                <span className="text-[11px] font-poppins text-gray-600 mt-1">
-                  Mais velocidade para planejar, validar e atribuir HE
-                </span>
-              </div>
-            </div>
-
-            {/* Próximos passos super objetivos */}
-            <div className="mt-auto pt-3 border-t border-gray-100 space-y-2">
-              <div className="flex items-start gap-2">
-                <span className="mt-1 w-2 h-2 rounded-full bg-nu-primary shrink-0" />
-                <span className="text-[11px] font-poppins text-gray-700">
-                  <span className="font-semibold">Problema:</span> registros dispersos, controles manuais e pouca visibilidade integrada.
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="mt-1 w-2 h-2 rounded-full bg-nu-primary shrink-0" />
-                <span className="text-[11px] font-poppins text-gray-700">
-                  <span className="font-semibold">Objetivo:</span> governança única de HE conectando TÁTICO, NOC e Supervisão.
-                </span>
-              </div>
-              <div className="flex items-start gap-2">
-                <span className="mt-1 w-2 h-2 rounded-full bg-nu-primary shrink-0" />
-                <span className="text-[11px] font-poppins text-gray-700">
-                  <span className="font-semibold">TABI entrega:</span> registro centralizado, validação por grupo e trilha completa de auditoria.
-                </span>
-              </div>
+            {/* Footer text */}
+            <div className="pt-6 mt-6 border-t border-gray-200">
+              <p className="text-sm font-poppins text-gray-600 italic">
+                "Controles descentralizados aumentam erros e riscos."
+              </p>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Column: Gráficos de aderência */}
+        {/* Right Column: Solução TABI */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.15 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="flex flex-col justify-center"
         >
-          <div className="bg-white rounded-2xl p-6 border-l-4 border-nu-primary shadow-sm h-full flex flex-col gap-6">
-            <h3 className="text-xl font-rubik font-bold text-nu-primary">
-              Objetivos do TABI
-            </h3>
+          <div className="bg-gradient-to-br from-nu-primary/5 to-nu-secondary/5 rounded-2xl p-8 border-l-4 border-nu-primary shadow-lg h-full flex flex-col justify-between">
+            
+            {/* Header */}
+            <div className="mb-6">
+              <h3 className="text-2xl font-rubik font-bold bg-gradient-to-r from-nu-primary to-nu-secondary bg-clip-text text-transparent mb-2">
+                Solução TABI
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-nu-primary to-nu-secondary rounded-full" />
+            </div>
 
-            <div className="flex-1 space-y-6">
-              {/* Locker por segmento */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-poppins font-medium text-gray-700">
-                    Padronização
-                  </span>
-                  <span className="text-[11px] font-poppins text-gray-500">
-                    Governança única de HE
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  {/* PJ_CHAT */}
-                  <div>
-                    <div className="flex justify-between text-[11px] mb-1">
-                      <span className="font-poppins text-gray-600">Regras claras</span>
-                      <span className="font-poppins font-semibold text-nu-primary">
-                        Meta: 100%
-                      </span>
-                    </div>
-                    <div className="h-3 rounded-full bg-gray-100 relative overflow-hidden">
-                      <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-nu-primary to-nu-secondary w-full" />
-                    </div>
-                    <p className="text-[11px] font-poppins text-gray-500 mt-1">Processo único para registrar, validar e aprovar HE.</p>
-                  </div>
-
-                  {/* PJ_CHAT_N2 */}
-                  <div>
-                    <div className="flex justify-between text-[11px] mb-1">
-                      <span className="font-poppins text-gray-600">Rastreabilidade</span>
-                      <span className="font-poppins font-semibold text-nu-primary">
-                        Logs
-                      </span>
-                    </div>
-                    <div className="h-3 rounded-full bg-gray-100 relative overflow-hidden">
-                      <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-nu-primary to-nu-secondary w-full" />
-                    </div>
-                    <p className="text-[11px] font-poppins text-gray-500 mt-1">Trilha de auditoria com ações do TÁTICO, NOC e Supervisão.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* TABI Lideranças */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-poppins font-medium text-gray-700">
-                    Agilidade
-                  </span>
-                  <span className="text-[11px] font-poppins text-gray-500">
-                    Fluxo fim a fim
-                  </span>
-                </div>
-                <div className="h-3 rounded-full bg-gray-100 relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-nu-secondary to-nu-primary w-[85%]" />
-                </div>
-                <p className="text-[11px] font-poppins text-gray-500 mt-1">
-                  Planejar, validar e atribuir HE em um único painel com importação de CSV e limites por pessoa.
-                </p>
+            {/* Icon/Visual */}
+            <div className="flex justify-center my-4">
+              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-nu-primary/20 to-nu-secondary/20 flex items-center justify-center">
+                <svg className="w-10 h-10 text-nu-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
             </div>
 
-            {/* Nota de rodapé bem curta */}
-            <div className="pt-3 border-t border-gray-100">
-              <p className="text-[10px] font-poppins text-gray-600 leading-relaxed">
-                <span className="font-semibold">Nota:</span> TABI integra planejamento, validação e atribuição de HE, reduzindo retrabalho e trazendo segurança jurídica com logs completos.
-              </p>
+            {/* Solution Points */}
+            <div className="space-y-4 flex-1">
+              {[
+                { icon: '🎯', label: 'Governança Única', desc: 'Registro centralizado de HE para TÁTICO, NOC e Supervisão' },
+                { icon: '🔍', label: 'Rastreabilidade Total', desc: 'Trilha completa de auditoria com logs de todas as ações' },
+                { icon: '⚡', label: 'Agilidade de Decisão', desc: 'Planejar, validar e atribuir HE em um único painel' }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.25 + i * 0.1 }}
+                  className="space-y-1"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{item.icon}</span>
+                    <h4 className="font-rubik font-bold text-nu-primary text-base">
+                      {item.label}
+                    </h4>
+                  </div>
+                  <p className="text-sm font-poppins text-gray-700 leading-relaxed ml-6">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Footer benefits */}
+            <div className="pt-6 mt-6 border-t border-nu-primary/20">
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { value: '80%', label: 'Menos erros' },
+                  { value: '100%', label: 'Rastreabilidade' },
+                  { value: '2x', label: 'Mais ágil' }
+                ].map((metric, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 + i * 0.05 }}
+                    className="text-center"
+                  >
+                    <p className="text-lg font-rubik font-bold text-nu-primary">
+                      {metric.value}
+                    </p>
+                    <p className="text-xs font-poppins text-gray-600">
+                      {metric.label}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

@@ -30,7 +30,6 @@ export const SlidePrinciples: React.FC<SlideProps> = (props) => {
           <div className="w-1/3 flex flex-col justify-center">
             <div className="space-y-6">
               <div>
-                <p className="text-sm font-semibold text-nu-primary/60 uppercase tracking-widest mb-2">Operação AeC · TABI</p>
                 <h2 className="font-rubik text-5xl font-bold text-nu-primary leading-tight">
                   PRINCÍPIOS<br />INEGOCIÁVEIS
                 </h2>
