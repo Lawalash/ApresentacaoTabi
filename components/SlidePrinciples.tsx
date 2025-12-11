@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SlideProps } from '../types';
-import { Layout } from './Layout';
+import { SlideLayout } from './SlideLayout';
 
 const PRINCIPLES = [
   "ESTAMOS AQUI PARA FAZER MELHOR QUE TODOS.",
@@ -16,13 +16,14 @@ const PRINCIPLES = [
   "SOMOS FELIZES COM O QUE FAZEMOS."
 ];
 
-export const Slide2Principles: React.FC<SlideProps> = (props) => {
+export const SlidePrinciples: React.FC<SlideProps> = (props) => {
   return (
-    <Layout
+    <SlideLayout
       {...props}
       title="Princípios Inegociáveis"
       subtitle="Base para decisão, execução e liderança"
     >
+
       <div className="relative h-full w-full flex flex-col">
         {/* Content - Two columns layout */}
         <div className="flex-1 flex gap-16 relative">
@@ -35,7 +36,7 @@ export const Slide2Principles: React.FC<SlideProps> = (props) => {
           >
             <div className="space-y-6">
               <div>
-                <p className="text-sm font-semibold text-nu-primary/60 uppercase tracking-widest mb-2">Operação TABI</p>
+                <p className="text-sm font-semibold text-nu-primary/60 uppercase tracking-widest mb-2">Operação Nubank</p>
                 <h2 className="font-rubik text-5xl font-bold text-nu-primary leading-tight">
                   PRINCÍPIOS<br />INEGOCIÁVEIS
                 </h2>
@@ -75,6 +76,6 @@ export const Slide2Principles: React.FC<SlideProps> = (props) => {
           </motion.div>
         </div>
       </div>
-    </Layout>
+    </SlideLayout>
   );
 };

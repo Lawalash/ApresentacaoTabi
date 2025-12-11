@@ -3,33 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TABI - Apresentação</title>
+    <title>Nubank - Governança Locker</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              'nu-primary': '#225B8E', // Lápis Lazúli
+              'nu-secondary': '#2A898D', // Ciano Escuro
+              'nu-mid': '#3699BA', // Azul/Verde
+              'nu-sky': '#45C5DE', // Céu Azul
+              'nu-cyan': '#3BC2C7', // Ciano
+            },
             fontFamily: {
               rubik: ['Rubik', 'sans-serif'],
               poppins: ['Poppins', 'sans-serif'],
-            },
-            colors: {
-              aec: {
-                lapis: '#225B8E',
-                bluegreen: '#3699BA',
-                skyblue: '#45C5DE',
-                cyan: '#3BC2C7',
-                darkcyan: '#2A898D',
-              }
             }
           }
         }
       }
     </script>
-  </head>
+    <link rel="stylesheet" href="/index.css">
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
